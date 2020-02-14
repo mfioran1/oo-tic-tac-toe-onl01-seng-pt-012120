@@ -115,5 +115,11 @@ def current_player
     end
   end
 end
+
+  def play 
+    while over? == false
+      turn
+    end
+    
 end
 
