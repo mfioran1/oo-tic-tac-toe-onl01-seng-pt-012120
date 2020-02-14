@@ -117,5 +117,3 @@ def current_player
 end
 end
 
-end
-end
