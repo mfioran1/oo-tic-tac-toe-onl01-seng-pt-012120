@@ -80,4 +80,16 @@ def current_player
   end
 end
 
+def full?
+    @board.all?{|occupied| occupied != " "}
+
+def draw?
+  !(won?) && (full?)
+end
+
+def over?
+  won? || full? || draw?
+end
+
+
 end
