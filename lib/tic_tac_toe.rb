@@ -30,8 +30,8 @@ def move(position, token)
   @board[position] = token
 end
 
-def position_taken?(move)
-  ((@board[move] == "X") || (@board[move] == "O"))
+def position_taken?(index)
+  ((@board[index] == "X") || (@board[index] == "O"))
 end
 
 def valid_move?(position)
