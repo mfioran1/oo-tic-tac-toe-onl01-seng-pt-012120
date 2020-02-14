@@ -77,19 +77,29 @@ def current_player
     return win_combo
     end
       false
+    end
   end
-end
 
-def full?
+  def full?
     @board.all?{|occupied| occupied != " "}
 
-def draw?
+  def draw?
   !(won?) && (full?)
-end
+  end
 
-def over?
+  def over?
   won? || full? || draw?
-end
-
+  end
+  
+  def winner
+    WIN_COMBINATIONS.detect do |win_combo|
+      if (@board[win_combo[0]]) == "X" && (@board[win_combo[1]]) == "X" && (@board[win_combo[2]]) == "X"
+      return "X"
+      elsif (@board[win_combo[0]]) == "O" && (@board[win_combo[1]]) == "O" && (@board[win_combo[2]]) == "O"
+      return "O"
+    else
+      nil
+    end
+  end
 end
 end
