@@ -45,7 +45,7 @@ def turn_count
     number_of_turns += 1 
   end
 end
-number_of_turns
+return number_of_turns
   
   
   
