@@ -81,14 +81,27 @@ def current_player
   end
 
   def full?
-    @board.all?{|occupied| occupied != " "}
+    @board.all? do |index|
+      index == "X" || index == "O"
+    end
+  end  
 
   def draw?
-  !(won?) && (full?)
+    if won?
+      return false
+    elsif full? == false
+      return false
+    else
+      return true
+    end
   end
 
   def over?
-  won? || full? || draw?
+    if won? || draw? == true
+      return true
+    else
+      return false
+    end
   end
   
   def winner
